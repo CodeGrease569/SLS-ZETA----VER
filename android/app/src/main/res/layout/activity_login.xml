@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome back"
+        android:textColor="@color/on_surface"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Sign in to your Student Life account"
+        android:textColor="@color/on_surface_variant"
+        android:textSize="14sp"
+        android:layout_marginBottom="32dp" />
+
+    <EditText
+        android:id="@+id/etIdentifier"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/surface_container_low"
+        android:hint="Student ID or Email"
+        android:paddingHorizontal="16dp"
+        android:textSize="14sp"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/surface_container_low"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingHorizontal="16dp"
+        android:textSize="14sp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnSubmitLogin"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/primary_container"
+        android:text="Sign In"
+        android:textColor="@color/on_primary"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

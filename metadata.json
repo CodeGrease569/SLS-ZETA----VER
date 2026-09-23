@@ -1,0 +1,7 @@
+{
+  "name": "Student Life - SWU PHINMA Portal",
+  "description": "Your centralized hub for student life services, document requests, scholarships, notifications, and AI support assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
