@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <!-- Top Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:elevation="4px"
+        android:paddingHorizontal="16px"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:ic_menu_revert"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#5B0E1B" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btnBack"
+            app:layout_constraintRight_toLeftOf="@id/guidanceBadge"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="Student Support Assistant"
+                android:textColor="#131B2E"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="SWU PHINMA Guidance & Support"
+                android:textColor="#554243"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/guidanceBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_pill_pink"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginEnd="4dp"
+                android:src="@android:ic_menu_info_details"
+                app:tint="#5B0E1B" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="GUIDANCE &amp; SUPPORT"
+                android:textColor="#5B0E1B"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Chat History RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvChatHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:clipToPadding="false"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/quickActionsScroll"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout" />
+
+    <!-- Quick Actions Chips ScrollView -->
+    <HorizontalScrollView
+        android:id="@+id/quickActionsScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:clipToPadding="false"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/bottomInputContainer">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Academic Appeal Chip -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAcademic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Academic Appeal"
+                android:textColor="@color/on_primary"
+                app:chipBackgroundColor="#5B0E1B"
+                app:chipIcon="@android:ic_menu_agenda"
+                app:chipIconTint="@color/on_primary" />
+
+            <!-- Campus Inquiry Chip -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCampus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Campus Inquiry"
+                android:textColor="#131B2E"
+                app:chipBackgroundColor="#F2F3FF"
+                app:chipIcon="@android:ic_menu_help"
+                app:chipIconTint="#131B2E" />
+
+            <!-- High Priority Chip -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High Priority"
+                android:textColor="#5B0E1B"
+                app:chipBackgroundColor="#FFDAD6"
+                app:chipIcon="@android:ic_menu_manage"
+                app:chipIconTint="#5B0E1B" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Bottom Input Container -->
+    <LinearLayout
+        android:id="@+id/bottomInputContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="16dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Top Row: Attachment, Input, Send -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnAttach"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:ic_menu_share"
+                app:tint="#554243" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="8dp">
+
+                <EditText
+                    android:id="@+id/etMessageInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_message_input"
+                    android:fontFamily="sans-serif"
+                    android:hint="Describe your concern..."
+                    android:inputType="textLongMessage|textCapSentences"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="48dp"
+                    android:textColor="#131B2E"
+                    android:textColorHint="#887272"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="12dp"
+                    android:src="@android:ic_menu_more"
+                    app:tint="#887272" />
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/btnSend"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_circle_maroon"
+                android:src="@android:ic_menu_send"
+                app:tint="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Bottom Row: Footer Confidentiality -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@android:ic_secure"
+            android:drawablePadding="6dp"
+            android:drawableTint="#887272"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Strictly Confidential. Submissions are encrypted."
+            android:textColor="#887272"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

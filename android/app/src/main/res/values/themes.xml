@@ -8,5 +8,8 @@
     <style name="Theme.StudentLife.Splash" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/primary_container</item>
         <item name="android:windowBackground">@color/primary_container</item>
+        <!-- Match status bar to your background and use dark icons -->
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

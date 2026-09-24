@@ -5,19 +5,83 @@
     android:layout_height="match_parent"
     android:background="@color/surface">
 
+    <!-- Top Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topHeader"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/surface"
+        android:elevation="0dp"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Student Life"
+            android:textColor="@color/on_surface"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_pill_pink"
+            android:fontFamily="sans-serif-medium"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:text="SWU PHINMA"
+            android:textColor="@color/primary_container"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart_確か="110dp" />
+
+        <ImageView
+            android:id="@+id/btnNotifications"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="6dp"
+            android:src="@android:ic_menu_agenda"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/ivProfile"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/on_surface" />
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_circle_maroon"
+            android:padding="6dp"
+            android:src="@android:ic_menu_myplaces"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/on_primary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:paddingBottom="96dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/topHeader">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="16dp">
 
             <!-- Greeting Header -->
             <TextView
@@ -42,19 +106,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="ID: 2023-00456 • BS Computer Science"
+                android:text="ID: 2023-00456 • BS Computer Science • 3rd Year"
                 android:textColor="@color/on_surface_variant"
                 android:textSize="12sp"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="16dp" />
 
             <!-- Academic Status Card -->
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="20dp"
                 app:cardBackgroundColor="@color/surface_container_lowest"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="2dp">
+                app:cardElevation="3dp"
+                app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -62,13 +127,32 @@
                     android:orientation="vertical"
                     android:padding="20dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Academic Status"
-                        android:textColor="@color/on_surface"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Academic Status"
+                            android:textColor="@color/on_surface"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_pill_emerald"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:text="Active"
+                            android:textColor="#047857"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -104,8 +188,215 @@
                         android:layout_marginTop="10dp"
                         android:progress="67"
                         android:progressTint="@color/primary_container" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="4 of 6 verified documents"
+                            android:textColor="@color/on_surface_variant"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Renewal in 14 days"
+                            android:textColor="#BE123C"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Quick Services Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Quick Services"
+                android:textColor="@color/on_surface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <!-- Scholarship -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardBackgroundColor="@color/bg_pastel_red"
+                        app:cardCornerRadius="12dp"
+                        app:strokeWidth="0dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@android:ic_menu_agenda"
+                            app:tint="@color/primary_container" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center"
+                        android:text="Scholarship"
+                        android:textColor="@color/on_surface"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- Documents -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardBackgroundColor="@color/bg_pastel_blue"
+                        app:cardCornerRadius="12dp"
+                        app:strokeWidth="0dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@android:ic_menu_send"
+                            app:tint="@color/primary_container" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center"
+                        android:text="Documents"
+                        android:textColor="@color/on_surface"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- Concerns -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardBackgroundColor="@color/bg_pastel_emerald"
+                        app:cardCornerRadius="12dp"
+                        app:strokeWidth="0dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@android:ic_menu_chat"
+                            app:tint="@color/primary_container" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center"
+                        android:text="Concerns"
+                        android:textColor="@color/on_surface"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- Lost ID -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardBackgroundColor="@color/bg_pastel_amber"
+                        app:cardCornerRadius="12dp"
+                        app:strokeWidth="0dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@android:ic_menu_my_calendar"
+                            app:tint="@color/primary_container" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center"
+                        android:text="Lost ID"
+                        android:textColor="@color/on_surface"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- History -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardBackgroundColor="@color/bg_pastel_gray"
+                        app:cardCornerRadius="12dp"
+                        app:strokeWidth="0dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@android:ic_menu_recent_history"
+                            app:tint="@color/primary_container" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center"
+                        android:text="History"
+                        android:textColor="@color/on_surface"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
 
             <!-- Quick Stats Grid -->
             <LinearLayout
@@ -115,14 +406,15 @@
                 android:weightSum="3">
 
                 <!-- Total Requests -->
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginEnd="6dp"
                     app:cardBackgroundColor="@color/surface_container_lowest"
                     app:cardCornerRadius="14dp"
-                    app:cardElevation="1dp">
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -148,17 +440,18 @@
                             android:textColor="@color/on_surface_variant"
                             android:textSize="12sp" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <!-- Completed -->
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginHorizontal="3dp"
                     app:cardBackgroundColor="@color/surface_container_lowest"
                     app:cardCornerRadius="14dp"
-                    app:cardElevation="1dp">
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -172,7 +465,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="9"
-                            android:textColor="@color/tertiary_emerald"
+                            android:textColor="#047857"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -184,17 +477,18 @@
                             android:textColor="@color/on_surface_variant"
                             android:textSize="12sp" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <!-- Pending -->
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="6dp"
                     app:cardBackgroundColor="@color/surface_container_lowest"
                     app:cardCornerRadius="14dp"
-                    app:cardElevation="1dp">
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -208,7 +502,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="3"
-                            android:textColor="@color/secondary"
+                            android:textColor="#B45309"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -220,54 +514,21 @@
                             android:textColor="@color/on_surface_variant"
                             android:textSize="12sp" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
 
-    <!-- Floating Bottom Navigation -->
-    <LinearLayout
+    <!-- Floating Bottom Navigation (Included 4 Items) -->
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/include_bottom_nav"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_margin="16dp"
-        android:background="@drawable/bg_floating_nav"
-        android:elevation="8dp"
-        android:gravity="center"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/navHome"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Home"
-            android:textColor="@color/primary_container"
-            android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/navRequests"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Requests"
-            android:textColor="@color/on_surface_variant"
-            android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/navChat"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="AI Help"
-            android:textColor="@color/on_surface_variant"
-            android:textSize="12sp" />
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
